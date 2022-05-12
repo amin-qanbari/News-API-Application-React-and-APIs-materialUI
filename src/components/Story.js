@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { mapTime } from "../helper/mapTime";
+import { mapTime , shorten } from "../helper/mapTime";
 import { getStory } from "../services/newsApi";
 
 //material-ui
@@ -66,7 +66,7 @@ console.log(story);
         <Card className={classes.card} sx={{}}>
           <Typography variant="h6">
             <Link className={classes.a} href={story.url}>
-              {story.title}
+              {shorten(story.title)}
             </Link>
           </Typography>
           <CardContent className={classes.cardContent}>
